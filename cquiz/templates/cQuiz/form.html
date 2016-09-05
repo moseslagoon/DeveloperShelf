@@ -1,0 +1,17 @@
+{% extends "cQuiz/base.html" %}
+
+{% block qaform %}
+<div class="container">
+     <p style="color: brown" ><strong><u>Welcome to Quiz!!</u></strong></p>
+
+    {% for q in question %}
+        <p> {{ q.q_id }}.  {{ q.question_text }}</p>
+    {% endfor %}
+
+    <p style="color: brown"><strong><u>CHOICES BELOW:</u></strong></p>
+
+    {% for a in ans %}
+        <p> {{ a.c_id }}. {{ a.choice_text }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
