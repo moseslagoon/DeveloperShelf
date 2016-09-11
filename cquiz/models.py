@@ -18,7 +18,7 @@ class Question(models.Model):
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=500)
-    correct = models.BooleanField(default=True)
+    correct = models.BooleanField(default=False)
     c_id = models.IntegerField(default=0)
 
     def __str__(self):

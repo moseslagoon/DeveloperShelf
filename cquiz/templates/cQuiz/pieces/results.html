@@ -1,0 +1,24 @@
+{% extends "cQuiz/base.html" %}
+
+{% load filters %}
+
+{% block qaform %}
+      <div class = "container">
+
+        <h1>Nice Job!</h1>
+
+        <h2>{{ question.question_text }}</h2>
+
+        <ul>
+        {% for choice in question.choice_set.all %}
+            {% if choice.correct %}
+                <h5 class="text-success">Correct answer: {{ choice.choice_text }}</h5>
+            {% else %}
+                <h5>{{ choice.choice_text }}</h5>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+        <a href="{% url 'cquiz:detail' question.id|increment_me%}" class="btn btn-success">Next?</a>
+    </div>
+{% endblock %}

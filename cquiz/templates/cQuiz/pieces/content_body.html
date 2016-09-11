@@ -2,7 +2,7 @@
   <h3>Welcome, new Citizens!</h3>
   <p>Awesome that you got to this page. A journey starts with a step, and you have started a step. Applaud yourself!</p>
 
-  <a href = "/cquiz/qa" class="btn btn-primary"> Start Quiz </a>
+  <a href ="{% url 'cquiz:detail' latest_question_list.0.id %}" class="btn btn-primary"> Start Quiz </a>
 
 </div>
 
